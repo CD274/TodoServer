@@ -1,18 +1,28 @@
 {
-  "name": "node",
+  "name": "todo-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de autenticación con PostgreSQL",
   "license": "ISC",
-  "author": "",
+  "author": "Tu Nombre",
   "type": "commonjs",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "node -e 'require(\"./server\").initializeDatabase()'",
+    "test": "jest"
   },
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "express": "^5.1.0",
-    "sqlite3": "^5.1.7"
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "dotenv": "^16.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
